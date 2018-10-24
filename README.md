@@ -1,7 +1,9 @@
 #Docker Clean
 
 docker stop $(docker ps -aq)
+
 docker rm $(docker ps -aq)
+
 docker rmi -f $(docker images -q)
 
 #Building and Running Applications
