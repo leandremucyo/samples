@@ -1,0 +1,31 @@
+version: '2'
+services:
+  eurekaserver:
+     image:   apps/eurekasvr:v0
+     ports:
+       - "8761:8761"
+  configserver:
+      image: apps/confsvr:v0
+      depends_on:
+        - eurekaserver
+      ports:
+         - "8888:8888"
+      environment:
+         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+         EUREKASERVER_PORT: "8761"
+         ENCRYPT_KEY:       "IMSYMMETRIC"
+  userservice:
+      image: apps/user-service:v0
+      ports:
+        - "8080:8080"
+      depends_on:
+        - eurekaserver
+        - configserver
+      environment:
+        PROFILE: "default"
+        SERVER_PORT: "8080"
+        CONFIGSERVER_URI: "http://configserver:8888"
+        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+        EUREKASERVER_PORT:   "8761"
+        CONFIGSERVER_PORT:   "8888"
+        ENCRYPT_KEY:       "IMSYMMETRIC"
