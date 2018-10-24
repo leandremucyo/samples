@@ -1,19 +1,16 @@
+#Docker Clean
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi -f $(docker images -q)
 
-github account
-leandremucyo@gmail.com
-
-Docker readiness
-	sudo -i 							#get admin privelege on command line
-	docker-machine restart				#start docker-machine if not running
-	docker-machine env 					#view docker machine IP
-	eval $(docker-machine env) 			#configure the command line for docker-machine ip
-
+#Building and Running Applications
 Switch to working directory of the app
 	cd /Users/cpt/degisa/dev/tut/apps/apps
-Build Image
+Build Images
 	mvn clean package docker:build
-View Image
+View Images
 	docker images all
-run the image
+
+Running All Microservices
 	docker-compose -f docker/docker-compose.yml up
 
