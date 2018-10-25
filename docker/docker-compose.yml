@@ -13,7 +13,7 @@ services:
       environment:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
          EUREKASERVER_PORT: "8761"
-         ENCRYPT_KEY:       "IMSYMMETRIC"
+         ENCRYPT_KEY:       ${ENCRYPT_KEY}
   userservice:
       image: apps/user-service:v0
       ports:
@@ -28,4 +28,4 @@ services:
         EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
         EUREKASERVER_PORT:   "8761"
         CONFIGSERVER_PORT:   "8888"
-        ENCRYPT_KEY:       "IMSYMMETRIC"
+        ENCRYPT_KEY:       ${ENCRYPT_KEY}

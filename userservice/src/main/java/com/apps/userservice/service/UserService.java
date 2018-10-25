@@ -22,7 +22,7 @@ public class UserService {
 		User user = new User();
 		user.setId(100);
 		user.setFirstName(firstName);
-		user.setLastName(serviceConfig.getMessage());
+		user.setLastName(serviceConfig.getMessage()+" - "+serviceConfig.getSecret());
 
         return user;
     }
