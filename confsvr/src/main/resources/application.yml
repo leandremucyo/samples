@@ -10,5 +10,5 @@ spring:
         git:
           uri: https://github.com/leandremucyo/config-repo/
           searchPaths: userservice
-          username: leandremucyo@gmail.com
-          password: KAbarondo1991
+          username: ${GIT_USR}
+          password: ${GIT_PWD}

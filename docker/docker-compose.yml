@@ -14,6 +14,8 @@ services:
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
          EUREKASERVER_PORT: "8761"
          ENCRYPT_KEY:       ${ENCRYPT_KEY}
+         GIT_USR: ${GIT_USR}
+         GIT_PWD: ${GIT_PWD}
   userservice:
       image: apps/user-service:v0
       ports:
