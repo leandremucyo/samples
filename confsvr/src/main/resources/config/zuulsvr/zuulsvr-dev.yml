@@ -1,0 +1,5 @@
+zuul.ignored-services: '*'
+zuul.routes.users: /userservice/**
+zuul.sensitiveHeaders: Cookie,Set-Cookie
+zuul.debug.request: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2500

@@ -20,6 +20,7 @@
     <module>confsvr</module>
     <module>userservice</module>
     <module>eurekasvr</module>
+    <module>zuulsrv</module>
   </modules>
   <build>
     <plugins>

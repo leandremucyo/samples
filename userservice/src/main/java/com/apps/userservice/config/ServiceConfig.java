@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 public class ServiceConfig {
 
 	@Value("${message}")
-	private String message = "Default Value";
-	@Value("${secret}")
+	private String success = "OK";
+	@Value("${message}")
 	private String secret = "";
 
-	public String getMessage() {
-		return message;
+	public String getSuccess() {
+		return this.success;
 	}
 	public String getSecret(){
 		return secret;

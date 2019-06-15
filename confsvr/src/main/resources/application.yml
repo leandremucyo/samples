@@ -8,7 +8,7 @@ spring:
       server:
         encrypt.enabled: false
         git:
-          uri: https://github.com/leandremucyo/config-repo/
+          uri: https://github.com/leandremucyo/config-repo
           searchPaths: userservice
           username: ${GIT_USR}
           password: ${GIT_PWD}

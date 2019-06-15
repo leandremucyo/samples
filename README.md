@@ -28,4 +28,18 @@
 
    docker-compose -f docker/docker-compose.yml up
 
+3. Rerruning a single service
+   
+   Build the service
+   mvn clean package docker:build
+
+   Run the service and specify the service name 
+      add --no-deps to prevent restarting linked services, 
+      add -d to running the service in detached mode
+
+   docker-compose -f "docker/docker-compose.yml" up --build userservice
+
+
+
+
 
